@@ -16,18 +16,21 @@ var feed = 'http://www.cbsnews.com/latest/rss/us';
 var numCalendarEvents = 10;
 
 // compliments:
+var morningStart = 3;
 var morning = [
             'Good morning!',
             'Make today great.',
             'How was your sleep?'
         ];
-        
+
+var afternoonStart = 11;   
 var afternoon = [
             'Hope your day is going well!',
             'You look great!',
             'You\'ve almost made it.'
         ];
-       
+ 
+var eveningStart = 21;      
 var evening = [
             'Brush your teeth!',
             'Goodnight!',

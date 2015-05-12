@@ -216,9 +216,9 @@ jQuery(document).ready(function($) {
       var hour = date.getHours();
 
       //set compliments to use
-      if (hour >= 3 && hour < 12) compliments = morning;
-      if (hour >= 12 && hour < 17) compliments = afternoon;
-      if (hour >= 17 || hour < 3) compliments = evening;
+      if (hour >= morningStart && hour < afternoonStart) compliments = morning;
+      if (hour >= afternoonStart && hour < eveningStart) compliments = afternoon;
+      if (hour >= eveningStart || hour < morningStart) compliments = evening;
 
 		compliment = Math.floor(Math.random()*compliments.length);
 		}
@@ -273,6 +273,7 @@ jQuery(document).ready(function($) {
 			// $('.forecast').updateWithText(forecast, 1000);
 
 			var now = new Date();
+
 			var sunrise = new Date(json.sys.sunrise*1000).toTimeString().substring(0,5);
 			var sunset = new Date(json.sys.sunset*1000).toTimeString().substring(0,5);
 
