@@ -12,7 +12,7 @@ var weatherParams = {
 };
 
 // Calendar can be changed from the calendar php file
-var feed = 'http://www.cbsnews.com/latest/rss/us';
+var feed = 'http://www.theverge.com/mobile/rss/index.xml';//http://www.cbsnews.com/latest/rss/us';
 var numCalendarEvents = 10;
 
 // compliments:
