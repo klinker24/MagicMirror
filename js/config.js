@@ -25,7 +25,7 @@ var morning = [
 var afternoon = [
             'Hope your day is going well!',
             'You look great!',
-            'You\'ve almost made it'
+            'You\'ve almost made it.'
         ];
        
 var evening = [
