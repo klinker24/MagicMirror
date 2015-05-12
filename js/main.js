@@ -275,7 +275,21 @@ jQuery(document).ready(function($) {
 			var now = new Date();
 
 			var sunrise = new Date(json.sys.sunrise*1000).toTimeString().substring(0,5);
-			var sunset = new Date(json.sys.sunset*1000).toTimeString().substring(0,5);
+			var sunset = new Date(json.sys.sunset*1000).toTimeString().substring(0,5)
+									.replace('13:', '1:')
+									.replace('14:', '2:')
+									.replace('15:', '3:')
+									.replace('16:', '4:')
+									.replace('17:', '5:')
+									.replace('18:', '6:')
+									.replace('19:', '7:')
+									.replace('20:', '8:')
+									.replace('21:', '9:')
+									.replace('22:', '10:')
+									.replace('23:', '11:')
+									.replace('24:', '12:')
+									.replace('0:' , '12:')
+									.replace('00:', '12:');
 
 			var windString = '<span class="wi wi-strong-wind xdimmed"></span> ' + kmh2beaufort(wind) ;
 			var sunString = '<span class="wi wi-sunrise xdimmed"></span> ' + sunrise;
