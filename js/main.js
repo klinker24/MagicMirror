@@ -83,7 +83,11 @@ jQuery(document).ready(function($) {
         date = date[0] + ' ' + date[1] + ' ' + date[2] + ' ' + date[3];
 
 		$('.date').html(date);
-		$('.time').html(now.format('HH') + ':' + now.format('mm') + '<span class="sec">'+now.format('ss')+'</span>');
+
+		var hours = now.format('HH');
+		if (hours > 12) hours = hours - 12;
+		if (hours == 0) hours = 12;
+		$('.time').html(hours + ':' + now.format('mm') + '<span class="sec">'+now.format('ss')+'</span>');
 
 		setTimeout(function() {
 			updateTime();
@@ -169,6 +173,7 @@ jQuery(document).ready(function($) {
                 }
             };
         	eventList.sort(function(a,b){return a.seconds-b.seconds});
+        	eventList = eventList.slice(0,numCalendarEvents);
 
         	setTimeout(function() {
         		updateCalendarData();
@@ -209,6 +214,7 @@ jQuery(document).ready(function($) {
       var compliments;
       var date = new Date();
       var hour = date.getHours();
+
       //set compliments to use
       if (hour >= 3 && hour < 12) compliments = morning;
       if (hour >= 12 && hour < 17) compliments = afternoon;

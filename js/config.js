@@ -1,36 +1,35 @@
 // for navigator language
-var lang = window.navigator.language;
+// var lang = window.navigator.language;
 // you can change the language
-// var lang = 'en';
+var lang = 'en';
 
 //change weather params here:
 //units: metric or imperial
 var weatherParams = {
-    'q':'Baarn,Netherlands',
-    'units':'metric',
+    'zip':'52240,us',
+    'units':'imperial',
     'lang':lang
 };
 
-var feed = 'http://feeds.nos.nl/nosjournaal?format=rss';
-//var feed = 'http://www.nu.nl/feeds/rss/achterklap.rss';
-//var feed = 'http://www.nu.nl/feeds/rss/opmerkelijk.rss';
-//var feed = 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml';
+// Calendar can be changed from the calendar php file
+var feed = 'http://www.cbsnews.com/latest/rss/us';
+var numCalendarEvents = 5;
 
 // compliments:
 var morning = [
-            'Good morning, handsome!',
-            'Enjoy your day!',
+            'Good morning!',
+            'Make today great.',
             'How was your sleep?'
         ];
         
 var afternoon = [
-            'Hello, beauty!',
-            'You look sexy!',
-            'Looking good today!'
+            'Hope your day is going well!',
+            'You look great!',
+            'You\'ve almost made it'
         ];
        
 var evening = [
-            'Wow, you look hot!',
-            'You look nice!',
-            'Hi, sexy!'
+            'Brush your teeth!',
+            'Goodnight!',
+            'Sleep tight!'
         ];
