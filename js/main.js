@@ -24,16 +24,9 @@ function roundVal(temp)
 	return Math.round(temp * 10) / 10;
 }
 
-function kmh2beaufort(kmh)
+function kmh2mph(kmh)
 {
-	var speeds = [1, 5, 11, 19, 28, 38, 49, 61, 74, 88, 102, 117, 1000];
-	for (var beaufort in speeds) {
-		var speed = speeds[beaufort];
-		if (speed > kmh) {
-			return beaufort;
-		}
-	}
-	return 12;
+	return Math.round(Number(kmh * .621371));
 }
 
 jQuery(document).ready(function($) {
@@ -298,7 +291,7 @@ jQuery(document).ready(function($) {
 									.replace('23:', '11:')
 									.replace('24:', '12:') + ' PM';
 
-			var windString = '<span class="wi wi-strong-wind xdimmed"></span> ' + kmh2beaufort(wind) ;
+			var windString = '<span class="wi wi-strong-wind xdimmed"></span> ' + kmh2mph(wind) ;
 			var sunString = '<span class="wi wi-sunrise xdimmed"></span> ' + sunrise;
 			if (json.sys.sunrise*1000 < now && json.sys.sunset*1000 > now) {
 				sunString = '<span class="wi wi-sunset xdimmed"></span> ' + sunset;
