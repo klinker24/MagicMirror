@@ -1,3 +1,4 @@
+// Add user profiles here
 var luke = 'luke';
 var jake = 'jake';
 
