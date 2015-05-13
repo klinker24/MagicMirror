@@ -21,7 +21,7 @@ jQuery.fn.outerHTML = function(s) {
 
 function roundVal(temp)
 {
-	return Math.round(temp * 10) / 10;
+	return Math.round(Number(temp));
 }
 
 function kmh2mph(kmh)
