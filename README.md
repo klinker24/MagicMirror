@@ -10,3 +10,10 @@ You can spin up a localhost server to run off of with:
 ```
 php -S localhost:8000
 ```
+
+
+To specify a user, you can use a URL encoded paramter. Example on localhost:
+
+```
+localhost:8000/?user=luke
+```

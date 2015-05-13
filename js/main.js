@@ -274,7 +274,16 @@ jQuery(document).ready(function($) {
 
 			var now = new Date();
 
-			var sunrise = new Date(json.sys.sunrise*1000).toTimeString().substring(0,5);
+			var sunrise = new Date(json.sys.sunrise*1000).toTimeString().substring(0,5)
+									.replace('01:', '1:')
+									.replace('02:', '2:')
+									.replace('03:', '3:')
+									.replace('04:', '4:')
+									.replace('05:', '5:')
+									.replace('06:', '6:')
+									.replace('07:', '7:')
+									.replace('08:', '8:')
+									.replace('09:', '9:') + ' AM';
 			var sunset = new Date(json.sys.sunset*1000).toTimeString().substring(0,5)
 									.replace('13:', '1:')
 									.replace('14:', '2:')
@@ -287,9 +296,7 @@ jQuery(document).ready(function($) {
 									.replace('21:', '9:')
 									.replace('22:', '10:')
 									.replace('23:', '11:')
-									.replace('24:', '12:')
-									.replace('0:' , '12:')
-									.replace('00:', '12:');
+									.replace('24:', '12:') + ' PM';
 
 			var windString = '<span class="wi wi-strong-wind xdimmed"></span> ' + kmh2beaufort(wind) ;
 			var sunString = '<span class="wi wi-sunrise xdimmed"></span> ' + sunrise;
