@@ -1,0 +1,9 @@
+*.php~
+*.css~
+*.js~
+*.md~
+*.xml~
+*.gitignore~
+.idea/
+*.DS_Store
+*.iml
