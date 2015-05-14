@@ -14,8 +14,8 @@ var feed = 'http://www.cbsnews.com/latest/rss/us';
 // Calendar can be changed from the calendar php file
 var numCalendarEvents = 10;
 
-// Notifications feed link
-var notifications = '';
+// Notifications feed link can be found under main.js
+var numNotifications = 6;
 
 // Compliments:
 var morningStart = 3;

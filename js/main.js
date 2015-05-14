@@ -169,7 +169,7 @@ jQuery(document).ready(function($) {
                 }
             };
         	eventList.sort(function(a,b){return a.seconds-b.seconds});
-        	eventList = eventList.slice(0,numCalendarEvents);
+            if (eventList.length > numCalendarEvents) eventList = eventList.slice(0,numCalendarEvents);
 
         	setTimeout(function() {
         		updateCalendarData();
@@ -213,6 +213,11 @@ jQuery(document).ready(function($) {
 
                 notificationLabels.push(item.appLabel);
                 notificationText.push(item.title + ": " + item.message);
+            }
+
+            if (notificationLabels.length > numNotifications) {
+                notificationLabels = notificationLabels.slice(0, numNotifications);
+                notificationText = notificationText.slice(0, numNotifications);
             }
         });
 
