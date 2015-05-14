@@ -31,6 +31,9 @@ function kmh2mph(kmh)
 
 jQuery(document).ready(function($) {
 
+    var notificationLabels = [];
+    var notificationText = [];
+
 	var news = [];
 	var newsIndex = 0;
 
@@ -197,6 +200,50 @@ jQuery(document).ready(function($) {
         	updateCalendar();
         }, 1000);
 	})();
+
+    (function updateNotificationData()
+    {
+        $.getJSON('https://omega-jet-799.appspot.com/_ah/api/notification/v1/collectionresponse_notificationrecord/Luke', {}, function(json, textStatus) {
+
+            notificationLabels = [];
+            notificationText = [];
+
+            for(var i = 0; i < json.items.length; i++) {
+                var item = json.items[i];
+
+                notificationLabels.push(item.appLabel);
+                notificationText.push(item.title + ": " + item.message);
+            }
+        });
+
+        setTimeout(function() {
+            updateNotificationData();
+        }, 60000);
+    })();
+
+    (function updateNotifications()
+    {
+        table = $('<table/>').addClass('xsmall').addClass('calendar-table');
+        opacity = 1;
+
+        for (var i in notificationLabels) {
+            var label = notificationLabels[i];
+            var message = notificationText[i];
+
+            var row = $('<tr/>').css('opacity',opacity);
+            row.append($('<td/>').html(label).addClass('description'));
+            row.append($('<td/>').html(message).addClass('days dimmed'));
+            table.append(row);
+
+            opacity -= 1 / notificationLabels.length;
+        }
+
+        $('.notifications').updateWithText(table,1000);
+
+        setTimeout(function() {
+            updateNotifications();
+        }, 1000);
+    })();
 
 	(function updateCompliment()
 	{
