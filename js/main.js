@@ -374,7 +374,7 @@ jQuery(document).ready(function($) {
 			'13n':'wi-night-snow',
 			'50n':'wi-night-alt-cloudy-windy'
 		}
-			$.getJSON('http://api.openweathermap.org/data/2.5/forecast', weatherParams, function(json, textStatus) {
+        $.getJSON('http://api.openweathermap.org/data/2.5/forecast', weatherParams, function(json, textStatus) {
 
 			var forecastData = {};
 

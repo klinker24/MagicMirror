@@ -6,7 +6,7 @@ var jake = 'jake';
 // Units: metric or imperial
 var lang = 'en';
 var units = 'imperial';
-var zip = '52240,us'; // default to iowa city
+var id = '4862034'; // default to iowa city
 
 // RSS feed link
 var feed = 'http://www.cbsnews.com/latest/rss/us';
@@ -42,17 +42,27 @@ var evening = [
 
 // Override any parameters for the specific users here
 if (user == luke) {
-    zip = '50021,us';
+    id = '4846960';
     notifications = '';
 } else if (user == jake) {
-    zip = '52240,us';
+    id = '4862034';
     notifications = '';
 }
 
 
 // finish by setting up the weather parameters
 var weatherParams = {
-    'zip':zip,
+    'id':id,
     'units':units,
     'lang':lang
 };
+
+
+/**
+ City IDs:
+
+ 4862034 - Iowa city
+ 4846960 - Ankeny
+
+
+ */
