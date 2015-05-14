@@ -218,7 +218,7 @@ jQuery(document).ready(function($) {
 
         setTimeout(function() {
             updateNotificationData();
-        }, 60000);
+        }, 90000);
     })();
 
     (function updateNotifications()
