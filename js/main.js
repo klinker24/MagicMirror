@@ -92,7 +92,11 @@ jQuery(document).ready(function($) {
 
 	(function updateCalendarData()
 	{
-		new ical_parser("calendar.php", function(cal){
+		new ical_parser("calendar.php?user=" + user, function(cal){
+			if (user != 'luke') {
+				return;
+			}
+
         	events = cal.getEvents();
         	eventList = [];
 
@@ -205,20 +209,22 @@ jQuery(document).ready(function($) {
     {
         $.getJSON('https://omega-jet-799.appspot.com/_ah/api/notification/v1/collectionresponse_notificationrecord/Luke', {}, function(json, textStatus) {
 
-            notificationLabels = [];
-            notificationText = [];
+        	if (user == 'luke') {
+        		notificationLabels = [];
+            	notificationText = [];
 
-            for(var i = 0; i < json.items.length; i++) {
-                var item = json.items[i];
+	            for(var i = 0; i < json.items.length; i++) {
+	                var item = json.items[i];
 
-                notificationLabels.push(item.appLabel);
-                notificationText.push(item.title + ": " + item.message);
-            }
+	                notificationLabels.push(item.appLabel);
+	                notificationText.push(item.title + ": " + item.message);
+	            }
 
-            if (notificationLabels.length > numNotifications) {
-                notificationLabels = notificationLabels.slice(0, numNotifications);
-                notificationText = notificationText.slice(0, numNotifications);
-            }
+	            if (notificationLabels.length > numNotifications) {
+	                notificationLabels = notificationLabels.slice(0, numNotifications);
+	                notificationText = notificationText.slice(0, numNotifications);
+	            }
+        	}
         });
 
         setTimeout(function() {

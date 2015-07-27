@@ -1,6 +1,7 @@
 // Add user profiles here
 var luke = 'luke';
 var jake = 'jake';
+var hannah = 'hannah';
 
 // Weather Parameters
 // Units: metric or imperial
@@ -47,6 +48,9 @@ if (user == luke) {
 } else if (user == jake) {
     id = '4862034';
     notifications = '';
+} else if (user == hannah) {
+    id = '4853828';
+    notifications = '';
 }
 
 
@@ -63,6 +67,6 @@ var weatherParams = {
 
  4862034 - Iowa city
  4846960 - Ankeny
-
+ 4853828 - Des Moines
 
  */
