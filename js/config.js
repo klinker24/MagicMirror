@@ -51,6 +51,7 @@ if (user == luke) {
 } else if (user == hannah) {
     id = '4853828';
     notifications = '';
+    feed = 'http://www.msn.com/rss/news.aspx';
 }
 
 
