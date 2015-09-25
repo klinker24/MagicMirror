@@ -93,10 +93,6 @@ jQuery(document).ready(function($) {
 	(function updateCalendarData()
 	{
 		new ical_parser("calendar.php?user=" + user, function(cal){
-			if (user != 'luke') {
-				return;
-			}
-
         	events = cal.getEvents();
         	eventList = [];
 

@@ -4,7 +4,7 @@
 	if ($_GET['user'] == 'luke') {
 		$url = 'https://www.google.com/calendar/ical/lklinker1%40gmail.com/private-142de08b29427d131537a7c1b515c5ee/basic.ics';
 	} else if ($_GET['user'] == 'hannah') {
-		$url = 'https://www.google.com/calendar/ical/hannahejohnson.hj%40gmail.com/private-71562f1468304e3c64e7bd3be6d46f06/basic.ics';
+		$url = 'https://www.google.com/calendar/ical/hannahejohnson.hj%40gmail.com/private-13373eeebbdfadc7d8f8fb1c8d64fd6f/basic.ics';
 	} else {
 		$url = '';
 	}
