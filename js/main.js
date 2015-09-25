@@ -139,6 +139,10 @@ jQuery(document).ready(function($) {
                         var time_string = moment(startDate).calendar()
                     }
                     if (!e.RRULE) {
+                    	if (time_string.indexOf('at 12:00 AM') > -1) {
+                        	time_string = time_string.replace('at 12:00 AM', '');
+                        }
+
     	        		eventList.push({'description':e.SUMMARY,'seconds':seconds,'days':time_string});
                     }
                     e.seconds = seconds;
@@ -163,6 +167,11 @@ jQuery(document).ready(function($) {
                             } else {
                                 var time_string = moment(dt).calendar()
                             }
+
+                            if (time_string.contains("at 12:00 AM")) {
+                            	time_string = time_string.replace("at 12:00 AM", "");
+                            }
+
                             eventList.push({'description':e.SUMMARY,'seconds':seconds,'days':time_string});
                         }           
                     }
