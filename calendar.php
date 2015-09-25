@@ -1,9 +1,10 @@
 <?php
 	
+	// Set the url of the calendar feed.
 	if ($_GET['user'] == 'luke') {
-		// Set the url of the calendar feed.
 		$url = 'https://www.google.com/calendar/ical/lklinker1%40gmail.com/private-142de08b29427d131537a7c1b515c5ee/basic.ics';
-		//https://p01-calendarws.icloud.com/ca/subscribe/1/n6x7Farxpt7m9S8bHg1TGArSj7J6kanm_2KEoJPL5YIAk3y70FpRo4GyWwO-6QfHSY5mXtHcRGVxYZUf7U3HPDOTG5x0qYnno1Zr_VuKH2M';
+	} else if ($_GET['user'] == 'hannah') {
+		$url = 'https://www.google.com/calendar/ical/hannahejohnson.hj%40gmail.com/private-71562f1468304e3c64e7bd3be6d46f06/basic.ics';
 	} else {
 		$url = '';
 	}
