@@ -13,7 +13,7 @@ var id = '4862034'; // default to iowa city
 var feed = 'http://www.cbsnews.com/latest/rss/us';
 
 // Calendar can be changed from the calendar php file
-var numCalendarEvents = 10;
+var numCalendarEvents = 20;
 
 // Notifications feed link can be found under main.js
 var numNotifications = 6;
