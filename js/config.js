@@ -60,7 +60,8 @@ if (user == luke) {
 var weatherParams = {
     'id':id,
     'units':units,
-    'lang':lang
+    'lang':lang, 
+    'APPID':'a03e22fcdc2c0f1486ac983ee6cdb5d6'
 };
 
 
