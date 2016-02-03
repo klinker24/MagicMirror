@@ -168,7 +168,7 @@ jQuery(document).ready(function($) {
                                 var time_string = moment(dt).calendar()
                             }
 
-                            if (time_string.contains("at 12:00 AM")) {
+                            if (time_string.indexOf('at 12:00 AM') > -1) {
                             	time_string = time_string.replace("at 12:00 AM", "");
                             }
 
